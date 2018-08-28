@@ -8,3 +8,7 @@
  ```sh
  yarn start
  ```
+ ### Tests
+ ```sh
+ yarn test
+ ```

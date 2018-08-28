@@ -9,7 +9,6 @@ import { withAsyncRequest } from 'decorators/withAsyncRequest';
 import { ENTITIES } from '../appConstants';
 
 const BasicLayout = ({ children, user }) => {
-  console.log('was');
   if (!user) {
     return null;
   }

@@ -6,7 +6,6 @@ import { getTestStore } from 'setupTests';
 describe('test Welcome page', () => {
   it('should render null without login', () => {
     const { Component } = getTestStore({}, Welcome);
-    console.log(Component);
     const wrapper = mount(<Component />);
     expect(wrapper.html()).toEqual(null);
   });
