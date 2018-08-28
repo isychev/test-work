@@ -1,0 +1,356 @@
+@import "node_modules/bootstrap/scss/functions";
+//@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "custom-mixins";
+
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// Start with assigning color names to specific hex values.
+$gray-600:                  #6c757d;
+$cyan:                      #17a2b8;
+$gray-100:                  #f8f9fa;
+
+$white:                     #fff;
+$black:                     #1f1f21;
+$red:                       #ff603b;
+$orange:                    #ffa200;
+$yellow:                    #ffed00;
+$green:                     #3ac834;
+$blue:                      #3888ff;
+$teal:                      #afcfff;
+$purple:                    #1b304f;
+
+// Create grayscale
+//$gray-dark:                 #234372;
+$gray-dark:                 #051834;
+$gray:                      #8e8e8e;
+$gray-light:                $gray;
+$gray-lighter:              #e1e1e1;
+$gray-lightest:             #f5f5f5;
+$gray-800:                  #3c3c3c;
+
+
+$theme-colors: (
+  primary:                  $yellow,
+  secondary:                $gray-600,
+  success:                  $green,
+  info:                     $cyan,
+  warning:                  $yellow,
+  danger:                   $red,
+  light:                    $gray-100,
+  dark:                     $gray-800
+);
+
+$primary-color:            map-get($theme-colors, "primary");
+
+$mark-bg:                   $yellow;
+$mark-padding:              0px;
+
+$blue-light:                #d8e8ff; // drag item in table config form
+$theme-color-interval:      0;
+
+// Spacing
+$spacer:                    1rem;
+$spacers: (
+        0:                  0,
+        1:                  ($spacer * .3334),
+        2:                  ($spacer * .6667),
+        3:                  $spacer,
+        4:                  ($spacer * 1.3334),
+        5:                  ($spacer * 2),
+        6:                  (1px)
+);
+
+$font-family-sans-serif:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base:          $font-family-sans-serif;
+$line-height-base:          1.25;
+$line-height-sm:            1.25;
+$small-font-size:           .875rem; // 13px
+
+$text-muted:                $gray;
+
+$font-weight-normal:        400;
+$font-weight-bold:          500;
+
+$h1-font-size:              2.1334rem;
+$h2-font-size:              2rem;
+$h3-font-size:              1.75rem;
+$h4-font-size:              1.5rem;
+$h5-font-size:              1.25rem;
+$h6-font-size:              .85rem;
+
+$headings-margin-bottom:    0;
+$headings-line-height:      $line-height-sm;
+$display4-size:             1.25rem;
+$display4-weight:           500;
+$display-line-height:       1.6667rem;
+
+
+
+
+//FORMS
+$input-box-shadow:          none;
+$input-focus-box-shadow:    none;
+$btn-focus-box-shadow:      none;
+$input-focus-box-shadow:    none;
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   $gray-lightest;
+$body-color:                $black;
+
+
+$link-color:                $blue;
+
+// Links
+//
+// Style anchor elements.
+
+$link-hover-color:          mix(#000, $blue, 20%);
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-gutter-width:         1.3334rem;
+
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-radius:             .15rem;
+$border-radius-lg:          .2rem;
+$border-radius-sm:          .1rem;
+
+
+// Table
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding:        1rem .75rem;
+$table-hover-bg:            $gray-lightest;
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
+
+$input-btn-padding-x:       1.251rem;
+$input-btn-padding-y:       .7045rem;    //.8rem;
+$input-btn-padding-x-sm:    1.26rem;     //.75rem;
+$input-btn-padding-y-sm:    .457rem;     //.38rem;
+$input-btn-line-height-sm:  $line-height-base;
+
+$btn-border-radius:         $border-radius;
+$btn-box-shadow:            none;
+$btn-focus-box-shadow:      none;
+$btn-active-box-shadow:     none;
+$btn-link-disabled-color:   $blue;
+$btn-box-shadow:            none;
+$btn-focus-box-shadow:      none;
+$btn-active-box-shadow:     none;
+
+
+// Forms
+$input-padding-x:              .9rem;
+$input-btn-focus-width:        0;
+$input-btn-focus-box-shadow:   none;
+$input-btn-line-height:        $line-height-sm;
+$input-box-shadow:             none;
+$input-focus-box-shadow:       none;
+$input-color:                  $black;
+$input-border-color:           $gray-lighter;
+$input-placeholder-color:      $gray;
+$input-focus-border-color:     $blue;
+
+$form-text-margin-top:         .3334rem;
+$form-group-margin-bottom:     1.4rem;
+$caret-width:                  10px;
+
+
+
+// TODO MOVE TO CUSTOM VARIALBES
+$caret-color:                  $blue;
+$caret-disable-color:          $gray;
+$caret-sidebar-color:          $white;
+
+
+// TODO MOVE TO ICONS
+$caret-down-icon-bg:               str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$caret-color}' viewBox='0 0 10 10'%3E%3Cpath d='M5.657 7.192L4.95 7.9 0 2.95l1.414-1.413L4.95 5.07l3.535-3.535L9.9 2.95 5.657 7.192z'/%3E%3C/svg%3E"), "#", "%23");
+$caret-up-icon-bg:                 str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$caret-color}' viewBox='0 0 10 10'%3E%3Cpath d='M4.243 2.707L4.95 2 9.9 6.95 8.484 8.364 4.95 4.828 1.414 8.364 0 6.95l4.243-4.243z'/%3E%3C/svg%3E"), "#", "%23");
+$caret-down-disable-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$caret-disable-color}' viewBox='0 0 10 10'%3E%3Cpath d='M5.657 7.192L4.95 7.9 0 2.95l1.414-1.413L4.95 5.07l3.535-3.535L9.9 2.95 5.657 7.192z'/%3E%3C/svg%3E"), "#", "%23");
+$caret-up-disable-icon-bg:         str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$caret-disable-color}' viewBox='0 0 10 10'%3E%3Cpath d='M4.243 2.707L4.95 2 9.9 6.95 8.484 8.364 4.95 4.828 1.414 8.364 0 6.95l4.243-4.243z'/%3E%3C/svg%3E"), "#", "%23");
+$caret-down-sidebar-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$caret-sidebar-color}' viewBox='0 0 512 512'%3E%3Cpath d='M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z'/%3E%3C/svg%3E"), "#", "%23");
+$caret-up-sidebar-icon-bg:         str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$caret-sidebar-color}' viewBox='0 0 512 512'%3E%3Cpath d='M256,213.7L256,213.7L256,213.7l174.2,167.2c4.3,4.2,11.4,4.1,15.8-0.2l30.6-29.9c4.4-4.3,4.5-11.3,0.2-15.5L264.1,131.1  c-2.2-2.2-5.2-3.2-8.1-3c-3-0.1-5.9,0.9-8.1,3L35.2,335.3c-4.3,4.2-4.2,11.2,0.2,15.5L66,380.7c4.4,4.3,11.5,4.4,15.8,0.2L256,213.7  z'/%3E%3C/svg%3E"), "#", "%23");
+$custom-select-padding-x:          $input-btn-padding-x;
+$custom-select-padding-y:          $input-btn-padding-y;
+$custom-select-indicator-padding:  1.5rem;
+$custom-select-bg-size:            10px 10px;
+$custom-select-indicator-color:    $blue;
+$custom-select-indicator:          $caret-down-icon-bg;
+$custom-select-focus-box-shadow:   none;
+$custom-control-gutter:            1.7rem;
+
+$custom-control-indicator-size:    1.2rem;
+$custom-control-indicator-bg:      $white;
+$custom-control-indicator-bg-size:             75% 75%;
+$custom-control-indicator-box-shadow:          none;
+$custom-control-indicator-focus-box-shadow:    none;
+
+$custom-checkbox-indicator-border-radius:      .25rem;
+$custom-checkbox-indicator-icon-checked:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 11'%3E%3Cpath fill='#FFFFFF' d='M5.043 6.639L1.81 3.406.129 5.086l3.47 3.47 1.436 1.44 7.378-7.358-1.68-1.681-5.69 5.682z'/%3E%3C/svg%3E"), "#", "%23");
+$custom-checkbox-indicator-icon-indeterminate: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 6'%3E%3Cpath stroke='#FFFFFF' d='M0 3h5'/%3E%3C/svg%3E"), "#", "%23");
+
+// TODO MOVE TO ICONS
+$custom-disabled-checkbox-checked-icon:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 11'%3E%3Cpath fill='#{$gray}' d='M5.043 6.639L1.81 3.406.129 5.086l3.47 3.47 1.436 1.44 7.378-7.358-1.68-1.681-5.69 5.682z'/%3E%3C/svg%3E"), "#", "%23");
+$custom-disabled-checkbox-indeterminate-icon:  str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 6'%3E%3Cpath stroke='#{$gray}' d='M0 3h5'/%3E%3C/svg%3E"), "#", "%23");
+$custom-radio-indicator-icon-checked:          url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31 31'%3E%3Cpath fill='%23FFFFFF' d='M15.5,31.5c-8.6,0-15.6-7-15.6-15.6c0-8.6,7-15.6,15.6-15.6s15.6,7,15.6,15.6C31.1,24.5,24.1,31.5,15.5,31.5z M15.5,6.5 c-5.1,0-9.3,4.2-9.3,9.3c0,5.1,4.2,9.3,9.3,9.3s9.3-4.2,9.3-9.3C24.8,10.7,20.7,6.5,15.5,6.5z'/%3E%3C/svg%3E");
+$custom-disabled-radio-checked-icon:           str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31 31'%3E%3Cpath fill='#{$gray-lighter}' d='M15.5,31.5c-8.6,0-15.6-7-15.6-15.6c0-8.6,7-15.6,15.6-15.6s15.6,7,15.6,15.6C31.1,24.5,24.1,31.5,15.5,31.5z M15.5,6.5 c-5.1,0-9.3,4.2-9.3,9.3c0,5.1,4.2,9.3,9.3,9.3s9.3-4.2,9.3-9.3C24.8,10.7,20.7,6.5,15.5,6.5z'/%3E%3C/svg%3E"), "#", "%23");
+
+
+// Breadcrumbs
+
+$breadcrumb-padding-y:           1.2334rem;
+$breadcrumb-padding-x:           1.3334rem;
+$breadcrumb-item-padding:        .3334rem;
+$breadcrumb-bg:                  $white;
+$breadcrumb-divider-color:       $gray;
+$breadcrumb-active-color:        $black;
+
+
+// Cards
+
+$card-spacer-x:                  map-get($spacers, 3);
+$card-spacer-y:                  map-get($spacers, 2);
+$card-cap-bg:                    $white;
+
+
+// Navs
+
+$nav-link-padding-y:             map-get($spacers, 2);
+$nav-link-padding-x:             map-get($spacers, 1);
+$nav-link-disabled-color:        $gray-lighter;
+$nav-tabs-border-color:          $gray-lighter;
+$nav-tabs-border-width:          0;
+$nav-tabs-link-active-color:     $black;
+$nav-tabs-link-active-bg:        transparent;
+$nav-pills-border-radius:        0;
+$nav-pills-link-active-bg:       #292929;
+
+
+// Close button
+$close-color:                    $black;
+// TODO MOVE TO ICONS
+$close-default-icon-bg:          str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$close-color}' viewBox='0 0 16 16'%3E%3Cpath d='M9.414 8l2.125-2.125a1.004 1.004 0 0 0-.003-1.41.995.995 0 0 0-1.411-.004L8 6.586 5.875 4.46a1.004 1.004 0 0 0-1.41.003.995.995 0 0 0-.004 1.411L6.586 8 4.46 10.125a1.004 1.004 0 0 0 .003 1.41.995.995 0 0 0 1.411.004L8 9.414l2.125 2.125c.381.381 1.02.387 1.41-.003a.995.995 0 0 0 .004-1.411L9.414 8zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z'/%3E%3C/svg%3E"), "#", "%23");
+$close-width:                    1rem;
+$close-height:                   1.5rem;
+
+//Modal
+$modal-sm:                       350px;
+$modal-lg:                       900px;
+//$close-modal-color:   $gray;
+//$close-modal-width:   1.5rem;
+//$close-modal-height:  1.5rem;
+
+$modal-inner-padding:            18px 20px;
+$modal-header-padding:           20px;
+
+$modal-content-border-color:     transparent;
+$modal-content-box-shadow-xs:    0 1px 0 0 rgba(204, 204, 204, 0.5);
+$modal-content-box-shadow-sm-up: 0 1px 0 0 rgba(204, 204, 204, 0.5);
+
+
+// Alerts
+
+$alert-padding-x:                1.3334rem;
+$alert-padding-y:                1.1rem;
+$alert-margin-bottom:            0;
+$alert-border-radius:            0;
+$alert-border-width:             0;
+
+
+// Tooltips
+$tooltip-bg:                     $white;
+$tooltip-color:                  $body-color;
+$tooltip-arrow-color:            $white;
+$tooltip-padding-y:              .6rem;
+$tooltip-padding-x:              1rem;
+$tooltip-opacity:                1;
+$tooltip-arrow-width:            8px;
+
+// Popovers
+// not found
+//$popover-inner-padding:     0;
+
+$popover-header-bg:              $white;
+$popover-header-padding-x:       20px 0;
+$popover-header-padding-y:       18px;
+
+$popover-body-padding-x:         20px;
+$popover-body-padding-y:         18px;
+
+$popover-border-color:           $gray-lighter;
+$popover-arrow-outer-color:      $gray-lighter;
+$popover-box-shadow:             0 0 4px 0 rgba(0, 0, 0, 0.1);
+$popover-border-width:           1px;
+
+// Badges
+
+// NOT FOUND
+//$badge-default-bg: $gray-lighter;
+$badge-font-size:                $small-font-size;
+$badge-font-weight:              400;
+$badge-padding-x:                .3334rem;
+$badge-padding-y:                .2334rem;
+// MOVE TO CUSTOM VARIABLES
+$badge-fixed-width:              2.1334rem;
+
+
+// Pagination
+
+$pagination-padding-y-sm:        .5334rem;
+
+$pagination-color:               $black;
+$pagination-bg:                  transparent;
+$pagination-border-width:        0;
+$pagination-border-color:        transparent;
+
+$pagination-hover-color:         $black;
+$pagination-hover-bg:            lighten($blue, 35%);;
+$pagination-hover-border:        transparent;
+
+$pagination-active-color:        $white;
+$pagination-active-bg:           $blue;
+$pagination-active-border:       transparent;
+
+$pagination-disabled-color:      $black;
+$pagination-disabled-bg:         transparent;
+$pagination-disabled-border:     transparent;
+
+
+$page-arrow-color:               $black;
+$page-arrow-hover-color:         $blue;
+$page-arrow-disabled-color:      $gray-lighter;
+
+
+
+// list group
+$list-group-active-color:        inherit;
+//$list-group-border-width:        0;
+$list-group-border-radius:       0;
+$list-group-active-bg:           lighten(map-get($theme-colors, "primary"),25%);
+$list-group-active-border-color: $list-group-active-bg;
+
+
+@import "node_modules/bootstrap/scss/variables";
