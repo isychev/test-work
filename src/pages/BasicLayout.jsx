@@ -8,8 +8,9 @@ import { withAsyncRequest } from 'decorators/withAsyncRequest';
 
 import { ENTITIES } from '../appConstants';
 
-const BasicLayout = ({ children, login }) => {
-  if (!login) {
+const BasicLayout = ({ children, user }) => {
+  console.log('was');
+  if (!user) {
     return null;
   }
   return (
@@ -21,18 +22,18 @@ const BasicLayout = ({ children, login }) => {
 
 BasicLayout.propTypes = {
   children: PropTypes.node,
-  login: PropTypes.objectOf(PropTypes.any),
+  user: PropTypes.objectOf(PropTypes.any),
 };
 BasicLayout.defaultProps = {
   children: null,
-  login: null,
+  user: null,
 };
 
 export { BasicLayout as BasicLayoutComponent };
 
 export default compose(
   connect(state => ({
-    login: selectorEntity(state, { entityAlias: ENTITIES.LOGIN }),
+    user: selectorEntity(state, { entityAlias: ENTITIES.USER }),
   })),
   withAsyncRequest([
     onLoadEntity({

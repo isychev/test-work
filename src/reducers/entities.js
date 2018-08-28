@@ -4,7 +4,6 @@ import {
   ENTITY_DELETE,
   ENTITY_UPDATE,
   ENTITY_LOAD_SUCCESS,
-  FORM_LOAD_FORM_DATA_SUCCESS,
 } from '../reduxConstants';
 
 const reducerEntities = (state = {}, action = {}) => {
@@ -33,7 +32,6 @@ const reducerEntities = (state = {}, action = {}) => {
         [entityAlias]: entity,
       };
     }
-    case FORM_LOAD_FORM_DATA_SUCCESS:
     case ENTITY_LOAD_SUCCESS: {
       const { entityAlias, data } = payload;
       if (entityAlias) {
